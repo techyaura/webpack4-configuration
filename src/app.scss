@@ -1,0 +1,28 @@
+$bluegrey: #2b3a42;
+$red: red;
+.webpack-demo {
+  pre {
+    padding: 8px 16px;
+    background: $bluegrey;
+    color: #e1e6e9;
+    font-family: Menlo, Courier, monospace;
+    font-size: 13px;
+    line-height: 1.5;
+    text-shadow: 0 1px 0 rgba(23, 31, 35, 0.5);
+    border-radius: 3px;
+  }
+  p {
+    color: red;
+  }
+  button {
+    padding: 10px;
+    background: #24b47e;
+    border: 1px solid rgba(#000, .1);
+    border-width: 1px 1px 3px;
+    border-radius: 3px;
+    font: inherit;
+    color: #fff;
+    cursor: pointer;
+    text-shadow: 0 1px 0 rgba(#000, .3), 0 1px 1px rgba(#000, .2);
+  }  
+}
