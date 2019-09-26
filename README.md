@@ -8,113 +8,35 @@ This is an webpack-4 configuration setup that can be used for develop & as well 
 
 ## How to use!
 
-  
-- create the files `env.development` for local & `.env.production` for production
-
-```sh
+1. Clone the repo
 
 ```
-GRAPHQl API's - ([live-url](https://gql-node.herokuapp.com/graphql))
-
-1. Register (Create User)
-
-```sh
-    mutation {
-    	  register(input: { email: "techyaura@yopmail.com", password: "Hello@123" }){
-    	    hashToken
-			message
-    	  }
-    }
+git clone https://github.com/techyaura/webpack4-configuration.git
 ```
 
-2. Register Verification(Verify User)
+2. Navigate to directory
 
-```sh
-    mutation {
-    	  registerVerificationByOtp(input: { otp: "<OTP>", hashToken: "<hashToken>" }){
-    	    message
-    	  }
-    }
+```
+cd webpack4-configuration
 ```
 
-3. Login (with registered User)
+3. Install the Npm packages
 
-```sh
-    query {
-	  login(
-		  input: {
-			email: "techyaura@yopmail.com", 
-	  		password: "Hello@123"
-		  }){
-	    message
-	    token
-	    user {
-	      email
-	      id
-	    }
-	  }
-	}
+```
+	npm i
 ```
 
-4. TODOS (create) - Authenticated Request(Must sent Authorization HEADER - format: `Authorization: Bearer <Token>`)
+4. Start the local dev-server with hot-reloading
 
-```sh
-    mutation {
-	  addTodo (input: { title: "Hello World" }) {
-	    message
-    	ok
-	  }
-	}
+```
+npm run develop
 ```
 
-5. TODOS (read) - Authenticated Request(Must sent Authorization HEADER - format: `Authorization: Bearer <Token>`)
+5. Generate Production build
 
-```sh
-   query {
-		todoList (first:5, offset: 1, sort: {createdAt: ASC }, filter: {title_contains: "techyaura"}) {
-			totalCount,
-			data {
-				createdAt
-				title
-				isCompleted
-				user {
-				email
-				}
-			}
-		}
-	}
 ```
-
-
-6. TODOS (View) - Authenticated Request(Must sent Authorization HEADER - format: `Authorization: Bearer <Token>`)
-
-```sh
-    query {
-	  todoView(id: "<<TODO-ID>>") {
-	    title
-	  }
-	}
+	npm run build
 ```
+## License
 
-
-6. TODOS (update) - Authenticated Request(Must sent Authorization HEADER - format: `Authorization: Bearer <Token>`)
-
-```sh
-    mutation {
-	  updateTodo (id: "<<TODO-ID>>", input: { title: "Hello World - 2" }) {
-	    message
-    	ok
-	  }
-	}
-```
-
-7. TODOS (delete)  - Authenticated Request(Must sent Authorization HEADER - format: `Authorization: Bearer <Token>`)
-
-```sh
-    mutation {
-	  deleteTodo(id: "<TODO-ID>") {
-	    message
-    	ok
-	  }
-	}
-```
+[MIT License](https://mit-license.org/)
