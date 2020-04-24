@@ -7,7 +7,12 @@
     "develop": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js"
   },
-  "keywords": ["webpack", "scss", "hotreload", "dev-server"],
+  "keywords": [
+    "webpack",
+    "scss",
+    "hotreload",
+    "dev-server"
+  ],
   "author": "techyaura",
   "license": "MIT",
   "devDependencies": {
@@ -19,7 +24,7 @@
     "css-loader": "^3.2.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "html-webpack-plugin": "^3.2.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.14.0",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
     "webpack": "^4.41.0",
